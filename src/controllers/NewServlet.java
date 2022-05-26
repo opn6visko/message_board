@@ -25,30 +25,28 @@ public class NewServlet extends HttpServlet {
         EntityManager em = DBUtil.createEntityManager();
         em.getTransaction().begin();
 
-        //Messageのインスタンスを作成
+        // Messageのインスタンスを生成
         Message m = new Message();
 
-        //mの各フィールドにデータを代入
+        // mの各フィールドにデータを代入
         String title = "taro";
         m.setTitle(title);
 
         String content = "hello";
         m.setContent(content);
 
-        Timestamp currentTime = new Timestamp(System.currentTimeMillis());
+        Timestamp currentTime = new Timestamp(System.currentTimeMillis());     // 現在の日時を取得
         m.setCreated_at(currentTime);
         m.setUpdated_at(currentTime);
 
-        //データベースに保存
+        // データベースに保存
         em.persist(m);
         em.getTransaction().commit();
 
-        //自動採番されたIDの値を表示
+        // 自動採番されたIDの値を表示
         response.getWriter().append(Integer.valueOf(m.getId()).toString());
 
         em.close();
-
-
-    }
+     }
 
 }

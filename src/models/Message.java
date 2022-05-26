@@ -55,7 +55,7 @@ public class Message {
         this.title = title;
     }
 
-    public String getCount() {
+    public String getContent() {
         return content;
     }
 
