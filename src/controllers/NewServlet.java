@@ -43,7 +43,7 @@ public class NewServlet extends HttpServlet {
         em.persist(m);
         em.getTransaction().commit();
 
-        //自動裁判されたIDの値を表示
+        //自動採番されたIDの値を表示
         response.getWriter().append(Integer.valueOf(m.getId()).toString());
 
         em.close();
