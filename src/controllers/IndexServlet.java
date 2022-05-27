@@ -32,7 +32,7 @@ public class IndexServlet extends HttpServlet {
         } catch(NumberFormatException e) {}
 
         // 最大件数と開始位置を指定してメッセージを取得
-        List<Message> messages = em.createNamedQuery("getAllMessages", Message.class)
+        List<Message> messages = em.createNamedQuery("getAllMessages", Message.class) //MessageクラスのgetAllMessagesと名付けたJPQLを引数にすることでDBへの問い合わせを実行できる。
                                    .setFirstResult(15 * (page - 1))
                                    .setMaxResults(15)
                                    .getResultList();

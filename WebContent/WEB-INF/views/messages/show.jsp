@@ -6,9 +6,8 @@
         <c:choose>
             <c:when test="${message != null}">
 
-
                 <h2>id : ${message.id} のメッセージ詳細ページ</h2>
-   <table>
+                <table>
                     <tbody>
                         <tr>
                             <th>タイトル</th>
